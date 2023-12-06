@@ -1,6 +1,12 @@
+using System.Data.SqlTypes;
+using System.Security.Cryptography.X509Certificates;
+
 public class Calculator
 {
     public string name;
+
+    public bool truth;
+
 
     //calculating methods
     public int add(int a, int b)
@@ -14,7 +20,7 @@ public class Calculator
 
     public float divide(int a, int b)
     {
-        float calc = Convert.ToSingle(a)/Convert.ToSingle(b);
+        float calc = Convert.ToSingle(a) / Convert.ToSingle(b);
         return calc;
     }
 
@@ -65,6 +71,20 @@ public class Calculator
 
     public void rerun()
     {
+        Console.WriteLine("Do you need me for more calculations?");
+        string answer = Console.ReadLine();
 
+        if (answer == "yes")
+        {
+            truth = true;
+        }
+        else if (answer == "no")
+        {
+            truth = false;
+        }
+        else 
+        {
+            rerun();
+        }
     }
 }
