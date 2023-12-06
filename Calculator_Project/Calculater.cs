@@ -1,6 +1,3 @@
-using System.Data.SqlTypes;
-using System.Security.Cryptography.X509Certificates;
-
 public class Calculator
 {
     public string name;
@@ -26,7 +23,7 @@ public class Calculator
 
     public void run()
     {
-        Console.WriteLine("Well i can add, subtract, multiply and divide numbers which would you like?");
+        Console.WriteLine("I can add, subtract, multiply and divide numbers which would you like?");
 
         string answer = Console.ReadLine();
 
@@ -66,6 +63,11 @@ public class Calculator
             Console.WriteLine("The correct answer is ");
             Console.WriteLine(divide(a, b));
             Console.ReadLine();
+        }
+        else
+        {
+            Console.WriteLine("I didn't understand that please be more specific!");
+            run();
         }
     }
 
